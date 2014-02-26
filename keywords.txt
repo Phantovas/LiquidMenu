@@ -1,0 +1,30 @@
+#######################################
+# Syntax Coloring Map For LiquidMenu
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+LiquidMenu	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+start	KEYWORD2
+show	KEYWORD2
+addMenuItem	KEYWORD2
+exit	KEYWORD2
+find	KEYWORD2
+getSelectItemIndex	KEYWORD2
+getSelectLine	KEYWORD2
+getSelectItem	KEYWORD2
+getCursor	KEYWORD2
+setCursor	KEYWORD2
+getCountItem	KEYWORD2
+getCountLevelItem	KEYWORD2
+isEdit	KEYWORD2
+#######################################
+# Constants (LITERAL1)
+#######################################
+
