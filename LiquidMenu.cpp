@@ -1,7 +1,7 @@
 /*
   LiquidMenu.cpp - Library for build menu on LiquidCrystal.
   Created by Vasiliy A. Ponomarjov, August 30, 2013.
-  Email: vas@vingrad.ru   
+  Email: vas@vingrad.ru
 */
 
 //#include "WProgram.h"

@@ -10,6 +10,14 @@
 
 #include "Arduino.h"
 
+//константы
+#define BTN_RIGHT  0
+#define BTN_UP     1
+#define BTN_DOWN   2
+#define BTN_LEFT   3
+#define BTN_SELECT 4
+#define BTN_NONE   5
+
 struct menuItem {
   uint8_t id;
   uint8_t parent;
