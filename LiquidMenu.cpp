@@ -87,7 +87,7 @@ void LiquidMenu::addMenuItem(uint8_t aId, uint8_t aParent, char *aTitle, boolean
 }
 
 void LiquidMenu::paint() {
-  register uint8_t i,j;
+  register uint8_t i,j,c;
 
   //если редактируем параметр, то вызываем подвязанную к нему функцию она сама прорисует что надо
   if (LiquidMenu::isEdit() && (LiquidMenu::getSelectItem()->_pfunc != NULL)) {
@@ -96,14 +96,16 @@ void LiquidMenu::paint() {
   }
 
   //если выбран последний пункт меню, то курсор надо поместить в самый низ экрана
-  if (_selectItemIndex == (_countLevelItem-1)) {
-    LiquidMenu::setSelectLine(_lcdCol-1);
+  if (_selectItemIndex == (_countLevelItem - 1)) {
+      LiquidMenu::setSelectLine(_lcdCol-1);
   }
 
   //устанавливаем счетчик на первую строку экрана
   j=0;
+  //определяем количество отображаемых строк, либо размер экрана, либо число пунктов в текущем уровне
+  c = min(_lcdRow, _countLevelItem); 
   //запускаем цикл от текущего меню - положение курсора до + число строк дисплея
-  for (i = _selectItemIndex - _selectLine; i < _selectItemIndex - _selectLine + _lcdRow; i++) {
+  for (i = _selectItemIndex - _selectLine; i < _selectItemIndex - _selectLine + c; i++) {
     //рисуем строку меню
     LiquidMenu::buildLine(_mList[i]->title);
     //рисуем курсор
@@ -233,7 +235,7 @@ void LiquidMenu::setSelectLine(int aLine) {
   //между нулевой строкой и установленным кол-вом строк дисплея
   _selectLine = constrain(aLine, 0, _lcdRow-1);
   //а вдруг максимальное число пунктов меню меньше, чем строк экрана
-  _selectLine = constrain(_selectLine, 0, _countLevelItem);
+  _selectLine = constrain(_selectLine, 0, _countLevelItem - 1);
 }
 
 /*
