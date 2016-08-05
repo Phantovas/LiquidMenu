@@ -1,3 +1,7 @@
+# игнорировать все файлы в каталоге build/
+nbproject/
+todo.txt
+
 # Compiled Object files
 *.slo
 *.lo

@@ -1,6 +1,7 @@
 /*
   LiquidMenu.cpp - Library for build menu on LiquidCrystal.
-  Created by Vasiliy A. Ponomarjov, August 30, 2013.
+  Created by Vasiliy A. Ponomarjov, August 30, 2013
+  Modified by Vasiliy A. Ponomarjov, August 5, 2016
   Email: vas@vingrad.ru
 */
 
@@ -331,7 +332,7 @@ boolean LiquidMenu::isEdit() {
   return _state;
 }
 
-void LiquidMenu::edit(boolean aState) {
+void LiquidMenu::edit(uint8_t aState) {
   //входим в режим редактирования параметра, значит не надо передавать кнопку
   LiquidMenu::setClickBtn(-1);
   _state = aState;
