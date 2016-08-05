@@ -1,4 +1,4 @@
-# игнорировать все файлы в каталоге build/
+#IDE Files
 nbproject/
 todo.txt
 
