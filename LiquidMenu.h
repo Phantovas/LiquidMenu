@@ -3,12 +3,15 @@
   Created by Vasiliy A. Ponomarjov, August 30, 2013.
   Email: vas@vingrad.ru
 */
+
 #ifndef LiquidMenu_h
 #define LiquidMenu_h
 
 //#include "WProgram.h"
-
 #include "Arduino.h"
+
+#define LM_ITEMCOUNT    50
+#define LM_MAXSHOWITEM  10
 
 //константы
 #define BTN_RIGHT  0
@@ -52,10 +55,10 @@ class LiquidMenu {
     int _selectLine;
     boolean _state;
     menuItem* _selectItem;
-    menuItem _listMenu[50];   //максималное число пунктов меню 50
-    uint8_t _countItem;          //число добавленных пунктов меню
-    menuItem* _mList[10];     //текущий список пунктов меню
-    uint8_t _countLevelItem;     //число пунктов меню в текущем уровне
+    menuItem _listMenu[LM_ITEMCOUNT];   //максималное число пунктов меню 
+    uint8_t _countItem;                 //число добавленных пунктов меню
+    menuItem* _mList[LM_MAXSHOWITEM];   //максимальное число одновременно выводимых пунктов меню на экран
+    uint8_t _countLevelItem;            //число пунктов меню в текущем уровне
     int _clickBtn;
     uint8_t _tabItem;
     void (*_fpaint)(uint8_t, char*); //функция вывода строки на экран
